@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="primaryColorNotes">#2196F3</color>
+    <color name="primaryColorDarkNotes">#0288d1</color>
+    <color name="tabScrollColorNotes">#01579B</color>
+    <color name="accentColorNotes">#f50057</color>
+    <color name="accentColorDarkNotes">#C51162</color>
+    <color name="accentColorNotesRipple">#FF80AB</color>
+
+</resources>
+

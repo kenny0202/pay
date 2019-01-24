@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "850107749488",
+    "firebase_url": "https://date-money.firebaseio.com",
+    "project_id": "date-money",
+    "storage_bucket": "date-money.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850107749488:android:138a3b28cfb76322",
+        "android_client_info": {
+          "package_name": "com.kennygabi.datemoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850107749488-634ldnfunttc14njgvevjdri6frn801t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOLYtoq83zBI-U9HAKhP8YVSeAqLiX1p0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
