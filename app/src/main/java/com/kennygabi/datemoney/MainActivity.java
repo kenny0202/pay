@@ -22,11 +22,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RadioButton radioSexButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,23 +49,25 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        CharSequence[] values = {"Gabi","Kenny"};
-
+        final RadioGroup group = findViewById(R.id.radioPersonGroup);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 EditText input = new EditText(MainActivity.this);
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT);
-                builder.setTitle("Who Paid?")
-                        .setMessage("Price?")
-                        .setView(input)
+                final View dialogView = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+                builder.setTitle("Who Paid")
+                        .setView(dialogView)
                         .setCancelable(false)
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                //do things
+                                id = group.getCheckedRadioButtonId();
+
+                                // find the radiobutton by returned id
+                                radioSexButton = (RadioButton) findViewById(id);
+
+                                Toast.makeText(MainActivity.this,
+                                        radioSexButton.getText(), Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
