@@ -23,7 +23,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/GabiPayment"
+        android:id="@+id/GabiSumValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -40,7 +40,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/KennyPayment"
+        android:id="@+id/KennySumValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

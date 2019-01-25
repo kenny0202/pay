@@ -8,16 +8,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class PaymentMain extends Fragment {
 
     private RecyclerView mRecyclerView;
     private MyAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private TextView GabiSumTextView;
+    private TextView KennySumTextView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,6 +35,27 @@ public class PaymentMain extends Fragment {
         mRecyclerView = v.findViewById(R.id.my_recycler_view);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+        //Sum up Gabi
+        GabiSumTextView = v.findViewById(R.id.GabiSumValue);
+
+        CollectionReference colRef = db.collection("userspayment");
+        colRef.whereEqualTo("name", "Gabi").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+            }
+        });
+
+
+
+
+        //Sum up Kenny
+                KennySumTextView = v.findViewById(R.id.KennyPayTextView);
+               // Query kennySumQuery = db.collection("userspayment").
+
+        //Logic to calculate Gabi and Kenny difference
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
