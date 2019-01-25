@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                                 String date = sdf.format(System.currentTimeMillis());
 
                                 Map<String, Object> userPaymentCollection = new HashMap<>();

@@ -18,7 +18,10 @@ public class MyAdapter extends FirestoreRecyclerAdapter<UserPaymentModel, MyAdap
 
     @Override
     protected void onBindViewHolder(@NonNull PaymentHolder holder, int position, @NonNull UserPaymentModel model) {
-        holder.textViewTitle.setText(model.getUsername());
+        holder.textViewName.setText(model.getName());
+        holder.textViewAmount.setText(model.getAmount());
+        holder.textViewDate.setText(model.getTimestamp());
+
     }
 
     @NonNull
@@ -31,11 +34,15 @@ public class MyAdapter extends FirestoreRecyclerAdapter<UserPaymentModel, MyAdap
 
     class PaymentHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle;
+        TextView textViewName;
+        TextView textViewAmount;
+        TextView textViewDate;
 
         public PaymentHolder(View itemView){
             super(itemView);
-            textViewTitle = itemView.findViewById(R.id.textViewRecycler);
+            textViewName = itemView.findViewById(R.id.nameTextView);
+            textViewAmount = itemView.findViewById(R.id.amountTextView);
+            textViewDate = itemView.findViewById(R.id.dateTextView);
         }
     }
 

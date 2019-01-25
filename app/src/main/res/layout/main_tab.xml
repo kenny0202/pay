@@ -2,22 +2,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
-        android:scrollbars="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:text="@tools:sample/last_names"/>
+    <TextView
+        android:id="@+id/WhoPayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="Kenny Pays Next"
+        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/empty_view"
+        android:id="@+id/GabiPayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Gabi"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/GabiPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="$500.00" />
+
+    <TextView
+        android:id="@+id/KennyPayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Kenny"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/KennyPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="$1500.00" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:visibility="gone"
-        android:text="emptyy" />
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
 
+        <TextView
+            android:id="@+id/PreviousPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Previous 10 Payment" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
 </LinearLayout>
