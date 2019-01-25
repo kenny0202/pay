@@ -4,12 +4,9 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/WhoPayTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewRecycler"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:text="Kenny" />
-
+        android:text="TextView" />
 
 </LinearLayout>

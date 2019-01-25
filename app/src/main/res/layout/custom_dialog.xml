@@ -15,6 +15,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
             android:layout_weight="1"
+            android:checked="true"
             android:text="Gabi" />
 
         <RadioButton
@@ -25,16 +26,27 @@
             android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:text="Kenny" />
+
     </RadioGroup>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="$10.00"
-        android:inputType="numberDecimal" />
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/amountInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+
 </LinearLayout>
