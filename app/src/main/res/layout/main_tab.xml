@@ -10,16 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Kenny Pays Next"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/GabiPayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Gabi"
+        android:layout_marginBottom="16dp"
         android:textSize="24sp" />
 
     <TextView
@@ -27,25 +18,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="$500.00" />
-
-    <TextView
-        android:id="@+id/KennyPayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Kenny"
-        android:textSize="24sp" />
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/KennySumValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="$1500.00" />
+        android:layout_marginBottom="16dp"
+        android:textSize="20sp"/>
+
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,7 +45,6 @@
             android:id="@+id/PreviousPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_gravity="center_horizontal"
             android:text="Previous 10 Payment" />
