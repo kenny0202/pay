@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 input = dialogView.findViewById(R.id.editText2);
 
-                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
                                 String date = sdf.format(System.currentTimeMillis());
 
                                 Map<String, Object> userPaymentCollection = new HashMap<>();
