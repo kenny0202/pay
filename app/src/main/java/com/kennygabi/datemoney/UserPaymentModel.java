@@ -1,10 +1,13 @@
 package com.kennygabi.datemoney;
 
+import java.util.Date;
+
 public class UserPaymentModel {
 
     private String name;
     private String amount;
     private String timestamp;
+    //private Date date;
 
     public UserPaymentModel() {
     }
@@ -13,6 +16,7 @@ public class UserPaymentModel {
         this.name = name;
         this.amount = amount;
         this.timestamp = timestamp;
+        //this.date = date;
     }
 
     public String getName() {
@@ -26,4 +30,6 @@ public class UserPaymentModel {
     public String getTimestamp() {
         return timestamp;
     }
+
+    //public Date getDate() { return date; }
 }

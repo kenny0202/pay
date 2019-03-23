@@ -65,8 +65,9 @@ public class PaymentMain extends Fragment {
                             sum += Double.valueOf(u.getAmount());
                         }
                     }
+                    String dblFormat = String.format("%.2f", sum);
                     Log.d(TAG, "onSuccess: " + sum);
-                    GabiSumTextView.setText("Gabi spent $" + String.valueOf(sum));
+                    GabiSumTextView.setText("Gabi spent $" + dblFormat);
                 }
             }
         });
@@ -90,8 +91,9 @@ public class PaymentMain extends Fragment {
                             sum += Double.valueOf(u.getAmount());
                         }
                     }
+                    String dblFormat = String.format("%.2f", sum);
                     Log.d(TAG, "onSuccess: " + sum);
-                    KennySumTextView.setText("Kenny spent $" + String.valueOf(sum));
+                    KennySumTextView.setText("Kenny spent $" + dblFormat);
                 }
             }
         });

@@ -20,12 +20,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,34 +76,45 @@ public class MainActivity extends AppCompatActivity {
 
                                 input = dialogView.findViewById(R.id.editText2);
 
-                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-                                String date = sdf.format(System.currentTimeMillis());
+                                //try {
+                                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 
-                                Map<String, Object> userPaymentCollection = new HashMap<>();
-                                userPaymentCollection.put("name", radioSelectedButton.getText().toString());
-                                userPaymentCollection.put("amount", input.getText().toString());
-                                userPaymentCollection.put("timestamp", date);
+                                    String date = sdf.format(System.currentTimeMillis());
+                                    //Date convertedDate = new Date();
 
-                                db.collection("userspayment").document()
-                                        .set(userPaymentCollection)
-                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void aVoid) {
-                                                Log.d("MainActivity", "DocumentSnapshot successfully written!");
-                                            }
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.w("MainActivity", "Error writing document", e);
-                                            }
-                                        });
+                                    //convertedDate = sdf.parse(date);
+                                    Map<String, Object> userPaymentCollection = new HashMap<>();
+                                    userPaymentCollection.put("name", radioSelectedButton.getText().toString());
+                                    userPaymentCollection.put("amount", input.getText().toString());
+                                    userPaymentCollection.put("timestamp", date);
+                                    //userPaymentCollection.put("timestamp2", convertedDate);
+
+                                    db.collection("userspayment").document()
+                                            .set(userPaymentCollection)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    Log.d("MainActivity", "DocumentSnapshot successfully written!");
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w("MainActivity", "Error writing document", e);
+                                                }
+                                            });
+                                //} catch (ParseException e) {
+                                    //e.printStackTrace();
+                                //}
+
 
                                 Toast.makeText(MainActivity.this,
                                         radioSelectedButton.getText() + " paid $" + input.getText().toString(), Toast.LENGTH_SHORT).show();
 
                             }
+
                         })
+
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -111,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
                 alert.show();
             }
         });
+
+        if(GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS) {
+            //Google Play Services are available
+        } else {
+            //Google Play Services are not available, or not updated
+        }
     }
 
     static class PaymentViewPagerAdapter extends FragmentStatePagerAdapter {
